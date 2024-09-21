@@ -187,19 +187,19 @@ void MainWindow::createDockWindows()
     m_wInputMonitor = new FrameMonitor(this);
     m_wInputMonitorDock = new QDockWidget(tr("Input monitor"), this);
     m_wInputMonitorDock->setWidget(m_wInputMonitor);
-    m_wInputMonitorDock->setObjectName("inputMonitor");
+    m_wInputMonitorDock->setObjectName(tr("inputMonitor"));
     addDockWidget(Qt::TopDockWidgetArea, m_wInputMonitorDock);
     
     m_wCurveMonitor = new FrameMonitor(this);
     m_wCurveMonitorDock = new QDockWidget(tr("Curve monitor"), this);
     m_wCurveMonitorDock->setWidget(m_wCurveMonitor);
-    m_wCurveMonitorDock->setObjectName("curveMonitor");
+    m_wCurveMonitorDock->setObjectName(tr("curveMonitor"));
     addDockWidget(Qt::TopDockWidgetArea, m_wCurveMonitorDock);
     
     m_wRenderPreview = new RenderPreview(m_project, this);
     m_wRenderPreviewDock = new QDockWidget(tr("Render preview"), this);
     m_wRenderPreviewDock->setWidget(m_wRenderPreview);
-    m_wRenderPreviewDock->setObjectName("renderPreview");
+    m_wRenderPreviewDock->setObjectName(tr("renderPreview"));
     addDockWidget(Qt::TopDockWidgetArea, m_wRenderPreviewDock);
     //TODO: replace by :
     // ui->menuView->addAction(dock->toggleViewAction());
