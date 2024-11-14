@@ -169,7 +169,7 @@ void RenderTask_sV::slotContinueRendering()
     qDebug()<<"Starting rendering process in Thread "<<thread()->currentThreadId();   
 
     /* real workhorse, need to account for exporting */
-    setupProgress(trUtf8("Rendering Slow-Mo …"), 2* int(m_prefs.fps().fps() * (m_timeEnd-m_timeStart)));
+    setupProgress(tr("Rendering Slow-Mo …"), 2* int(m_prefs.fps().fps() * (m_timeEnd-m_timeStart)));
         
     //TODO: initialize
     m_stopwatch.start();
