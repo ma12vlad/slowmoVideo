@@ -158,7 +158,7 @@ void NewProjectDialog::slotUpdateVideoInfo()
     QFile file(ui->inputVideo->text());
     if (file.exists()) {
         m_videoInfo = getInfo(ui->inputVideo->text().toStdString().c_str());
-        QString text = trUtf8("Number of video streams: %1\nFrames: %2\nSize: %3×%4\n")
+        QString text = tr("Number of video streams: %1\nFrames: %2\nSize: %3×%4\n")
                 .arg(m_videoInfo.streamsCount).arg(m_videoInfo.framesCount)
                 .arg(m_videoInfo.width).arg(m_videoInfo.height);
         text.append(tr("Frame rate: %1/%2").arg(m_videoInfo.frameRateNum).arg(m_videoInfo.frameRateDen));
