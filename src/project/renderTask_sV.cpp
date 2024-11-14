@@ -74,8 +74,6 @@ void RenderTask_sV::slotStopRendering()
     mutex.unlock();
 }
 
-#pragma mark - 
-#pragma mark progress dialog
 
 /**
  * setup the progress dialog
@@ -108,8 +106,6 @@ void RenderTask_sV::updateMessage(QString desc)
 	emit signalItemDesc(desc);
 }
 
-#pragma mark - 
-#pragma mark set/get task
 
 void RenderTask_sV::setRenderTarget(AbstractRenderTarget_sV *renderTarget)
 {
@@ -157,8 +153,6 @@ QDir RenderTask_sV::getRenderDirectory() {
 
 }
 
-#pragma mark - 
-#pragma mark rendering
 
 /**
  *  this is the real workhorse.
