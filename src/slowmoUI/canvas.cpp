@@ -117,7 +117,7 @@ Canvas::Canvas(Project_sV *project, QWidget *parent) :
 
     m_curveTypeMapper = new QSignalMapper(this);
     m_aLinear = new QAction(tr("&Linear curve"), this);
-    m_aBezier = new QAction(trUtf8("&Bézier curve"), this);
+    m_aBezier = new QAction(tr("&Bézier curve"), this);
     m_curveTypeMapper->setMapping(m_aLinear, CurveType_Linear);
     m_curveTypeMapper->setMapping(m_aBezier, CurveType_Bezier);
 
@@ -128,7 +128,7 @@ Canvas::Canvas(Project_sV *project, QWidget *parent) :
     double arr[] = {1, .5, 0, -.5, -1};
 #define N_SPEEDS 5
     for (int i = 0; i < N_SPEEDS; i++) {
-        m_aSpeeds.push_back(new QAction(trUtf8("Set speed to %1×").arg(arr[i], 0, 'f', 1), this));
+        m_aSpeeds.push_back(new QAction(tr("Set speed to %1×").arg(arr[i], 0, 'f', 1), this));
         m_speedsMapper->setMapping(m_aSpeeds.back(), QString("%1").arg(arr[i],0,'f',1));
     }
 
@@ -794,7 +794,7 @@ void Canvas::contextMenuEvent(QContextMenuEvent *e)
     m_states.contextmenuMouseTime = convertCanvasToTime(e->pos()).toQPointF();
 
     QMenu menu;
-    QMenu speedMenu(trUtf8("Segment replay &speed …"), &menu);
+    QMenu speedMenu(tr("Segment replay &speed …"), &menu);
 
     const CanvasObject_sV *obj = objectAt(e->pos(), m_states.prevModifiers);
 
