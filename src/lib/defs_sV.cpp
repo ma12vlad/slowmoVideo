@@ -63,7 +63,7 @@ QString toString(const CurveType &curveType)
     case CurveType_Linear:
         return QObject::tr("Linear");
     case CurveType_Bezier:
-        return QObject::trUtf8("Bézier");
+        return QObject::tr("Bézier");
     default:
         Q_ASSERT(false);
         return QObject::tr("Unknown curve type");
@@ -100,11 +100,11 @@ QString toString(const InterpolationType &interpolation)
     case InterpolationType_TwowayNew:
         return QObject::tr("Two-way interpolation (accurate)");
     case InterpolationType_Bezier:
-        return QObject::trUtf8("Bézier interpolation");
+        return QObject::tr("Bézier interpolation");
     case InterpolationType_None:
-        return QObject::trUtf8("Linear interpolation");
+        return QObject::tr("Linear interpolation");
     case InterpolationType_Nearest:
-        return QObject::trUtf8("Nearest Frame interpolation");
+        return QObject::tr("Nearest Frame interpolation");
     default:
         return QObject::tr("Unknown interpolation");
     }
