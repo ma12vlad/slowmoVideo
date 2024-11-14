@@ -67,7 +67,6 @@ VideoFFMPEG::~VideoFFMPEG()
 	free(m_videoOut);
 }
 
-#pragma mark -
     
 int VideoFFMPEG::writeFrame(const QImage& frame)
 {
@@ -130,8 +129,6 @@ int VideoFFMPEG::exportFrames(QString filepattern,int first,RenderTask_sV *progr
 	return 0;
 }
 
-#pragma mark -
-#pragma mark C bridge
 void VideoFFMPEG::process_state_changed()
 {
     if (process->state() == QProcess::Starting) {
