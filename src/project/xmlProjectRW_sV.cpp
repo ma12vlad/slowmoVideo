@@ -304,7 +304,7 @@ void XmlProjectRW_sV::loadFrameSource(QXmlStreamReader *reader, Project_sV *proj
     } else {
         reader->skipCurrentElement();
         qDebug() << "Unknown frame source: " << frameSourceType << "; Cannot load!";
-        throw FrameSourceError(QObject::trUtf8("Unknown frame source “%1”. Cannot load the project.").arg(frameSourceType.toString()));
+        throw FrameSourceError(QObject::tr("Unknown frame source “%1”. Cannot load the project.").arg(frameSourceType.toString()));
     } 
     //qDebug() << "loadFrameSource ended";
 }

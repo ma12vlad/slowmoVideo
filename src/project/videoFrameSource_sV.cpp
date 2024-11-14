@@ -312,15 +312,15 @@ void VideoFrameSource_sV::loadOrigFrames()
     m_ffmpeg->waitForFinished(tmout);
     m_ffmpeg->terminate();
     
-	QTime time;
-        time.start();
+	QElapsedTimer timer;
+        timer.start();
     
     extractFramesFor(FrameSize_Orig, m_ffmpeg);
     
     m_ffmpeg->waitForFinished(tmout);
     m_ffmpeg->terminate();
    
-    qDebug() << "ffmpeg in  " << time.elapsed()  << "ms";
+    qDebug() << "ffmpeg in  " << timer.elapsed()  << "ms";
 
     m_ffmpegSemaphore.release();
     

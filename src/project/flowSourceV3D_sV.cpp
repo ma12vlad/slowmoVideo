@@ -56,17 +56,17 @@ FlowField_sV* FlowSourceV3D_sV::buildFlow(uint leftFrame, uint rightFrame, Frame
         qDebug() << "Arguments: " << args;
 
 
-        QTime time;
+        QElapsedTimer timer;
         QProcess proc;
 
-        time.start();
+        timer.start();
         proc.start(program, args);
         proc.waitForFinished(-1);
         if (proc.exitCode() != 0) {
             qDebug() << "Failed: " << proc.readAllStandardError() << proc.readAllStandardOutput();
             throw FlowBuildingError(QString("Flow builder exited with exit code %1; For details see debugging output").arg(proc.exitCode()));
         } else {
-            qDebug() << "Optical flow built for " << flowFileName << " in " << time.elapsed() << " ms";
+            qDebug() << "Optical flow built for " << flowFileName << " in " << timer.elapsed() << " ms";
             qDebug() << proc.readAllStandardError() << proc.readAllStandardOutput();
         }
     } else {

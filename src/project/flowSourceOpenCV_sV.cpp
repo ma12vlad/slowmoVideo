@@ -146,8 +146,8 @@ FlowField_sV* FlowSourceOpenCV_sV::buildFlow(uint leftFrame, uint rightFrame, Fr
 
     /// \todo Check if size is equal
     if (!QFile(flowFileName).exists()) {
-        QTime time;
-        time.start();
+        QElapsedTimer timer;
+        timer.start();
         QString prevpath = project()->frameSource()->framePath(leftFrame, frameSize);
         QString path = project()->frameSource()->framePath(rightFrame, frameSize);
 
@@ -199,7 +199,7 @@ FlowField_sV* FlowSourceOpenCV_sV::buildFlow(uint leftFrame, uint rightFrame, Fr
                 throw FlowBuildingError(QString("imread: Could not read image " + prevpath));
             }
         }
-        qDebug() << "Optical flow built for " << flowFileName << " in " << time.elapsed() << " ms.";
+        qDebug() << "Optical flow built for " << flowFileName << " in " << timer.elapsed() << " ms.";
     } else {
         qDebug().nospace() << "Re-using existing flow image for left frame " << leftFrame << " to right frame " << rightFrame << ": " << flowFileName;
     }
